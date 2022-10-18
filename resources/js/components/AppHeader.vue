@@ -6,11 +6,9 @@
                 v-for="(link, index) in navLinks"
                 :key="index"
                 >
-                    <a 
-                    :href="link.link"
-                    >
+                    <router-link :to="{name: link.link}">
                         {{link.label}}
-                    </a>
+                    </router-link>
                 </li>
             </ul>
         </nav>
@@ -25,15 +23,15 @@ export default {
            navLinks:    [
                             {
                                 label: 'Home Page',
-                                link: '#'
+                                link: 'home'
                             },   
                             {
                                 label: 'Vai ai Post',
-                                link: '#'
+                                link: 'posts'
                             },   
                             {
                                 label: 'Contatti',
-                                link: '#'
+                                link: 'contacts'
                             }
                         ]
         }
