@@ -5,6 +5,7 @@ Vue.use(VueRouter);
 import HomePage from './pages/HomePage.vue';
 import PostsPage from './pages/PostsPage.vue';
 import ContactsPage from './pages/ContactsPage.vue';
+import ShowPost from './pages/ShowPost.vue';
 import App404 from './pages/App404.vue';
 
 const router = new VueRouter({
@@ -24,6 +25,11 @@ const router = new VueRouter({
                         path: '/contacts',
                         name: 'contacts',
                         component: ContactsPage
+                    },
+                    {
+                        path: '/posts/:slug',
+                        name: 'post',
+                        component: ShowPost
                     },
                     {
                         path: '/*',

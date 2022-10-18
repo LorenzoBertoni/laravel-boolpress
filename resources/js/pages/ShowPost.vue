@@ -1,5 +1,6 @@
 <template>
-  <div 
+<div class="container mt-5">
+    <div 
     class="card"
     >
         <div 
@@ -27,6 +28,11 @@
                 {{post.title}}
             </h4>
 
+            <h5>
+                Slug:
+                {{post.slug}}
+            </h5>
+
             <p v-if="post.category">
                 Categoria:
                 {{post.category.name}}
@@ -49,54 +55,40 @@
             </p>
 
             <p>
-                {{truncateText(post.description, 30)}}    
+                Contenuto:
+                {{post.description}}    
             </p>
-
-            <router-link :to="{name: 'post', params: {slug: post.slug}}">
-                Leggi di più
-            </router-link>
         </div>
     </div>
+</div>
 </template>
 
 <script>
 export default {
-    name: 'SinglePost',
-    props: {
-        post: Object
+    name: 'ShowPost',
+    data() {
+        return {
+            post: null
+        }
     },
     methods: {
-        truncateText(text, maxlength) {
-            if (text.length < maxlength) {
-                return text;
-            } else {
-                return text.substring(0, maxlength) + '...';
-            }
+        getPostSlug() {
+            const slug = this.$route.params.slug;
+            console.log(slug);
+
+            axios.get('/api/posts/' + slug)
+            .then(response => {
+                this.post = response.data.result;
+                console.log(this.post)
+            });
         }
+    },
+    mounted() {
+        this.getPostSlug();
     }
 }
 </script>
 
-<style lang="scss">
-    .card {
-        display: flex;
-        flex-direction: column;
-        flex-basis: calc((100% / 3) - 1rem);
-        padding: .5rem 1rem;
-        border: 1px solid black;
-        border-radius: .5rem;
-        .card-img {
-            width: 100%;
-            height: 400px;
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center;
-            }
-        }
-        a {
-            text-decoration: none;
-        }
-    }
+<style>
+
 </style>

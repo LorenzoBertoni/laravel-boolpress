@@ -35,8 +35,25 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $post = Post::where('slug', $slug)
+        ->with(['category', 'tags'])
+        ->first();
+        if ($post->img_path) {
+            $post->img_path = asset('storage/' . $post->img_path);
+        }
+
+        if ($post) {
+            return response()->json([
+                'success' => true,
+                'result' => $post
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'result' => 'Post non esistente'
+            ]);
+        }
     }
 }
