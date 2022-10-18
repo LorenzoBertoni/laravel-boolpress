@@ -2083,10 +2083,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var slug = this.$route.params.slug;
-      console.log(slug);
       axios.get('/api/posts/' + slug).then(function (response) {
         _this.post = response.data.result;
-        console.log(_this.post);
       });
     }
   },
@@ -2274,10 +2272,17 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("h1", [_vm._v("Contatti")]);
+  return _vm._m(0);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "container mt-5"
+  }, [_c("h1", [_vm._v("Contatti")])]);
+}];
 render._withStripped = true;
 
 
@@ -2298,10 +2303,17 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("h1", [_vm._v("home")]);
+  return _vm._m(0);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "container mt-5"
+  }, [_c("h1", [_vm._v("Home Page")])]);
+}];
 render._withStripped = true;
 
 

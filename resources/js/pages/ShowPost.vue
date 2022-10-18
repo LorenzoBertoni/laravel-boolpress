@@ -74,12 +74,10 @@ export default {
     methods: {
         getPostSlug() {
             const slug = this.$route.params.slug;
-            console.log(slug);
 
             axios.get('/api/posts/' + slug)
             .then(response => {
                 this.post = response.data.result;
-                console.log(this.post)
             });
         }
     },
