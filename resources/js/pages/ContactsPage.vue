@@ -3,27 +3,41 @@
         <h1>Contattaci:</h1>
 
         <form @submit.prevent="sendEmail">
-            <label for="name">Nome</label>
-            <input 
-            type="text"
-            id="name"
-            v-model="name"
-            >
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input 
+                type="text"
+                id="name"
+                class="form-control"
+                v-model="name"
+                >
+            </div>
             
-            <label for="email">Email</label>
-            <input
-            type="email"
-            id="email"
-            v-model="email"
-            >
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                type="email"
+                id="email"
+                class="form-control"
+                v-model="email"
+                >
+            </div>
             
-            <label for="message">Messaggio</label>
-            <textarea
-            id="message"
-            v-model="message"
-            ></textarea>
-
-            <button type="submit">Invia</button>
+            <div class="form-group">
+                <label for="message">Messaggio</label>
+                <textarea
+                id="message"
+                class="form-control"
+                v-model="message"
+                ></textarea>
+            </div>
+            
+            <button 
+            type="submit"
+            class="btn btn-primary"
+            >
+                Invia
+            </button>
         </form>
     </div>
 </template>
@@ -52,6 +66,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style>
     
 </style>
