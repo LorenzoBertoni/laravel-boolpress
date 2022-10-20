@@ -52,7 +52,9 @@
                 {{truncateText(post.description, 30)}}    
             </p>
 
-            <router-link :to="{name: 'post', params: {slug: post.slug}}">
+            <router-link 
+            :to="{name: 'post', params: {slug: post.slug}}"
+            >
                 Leggi di più
             </router-link>
         </div>

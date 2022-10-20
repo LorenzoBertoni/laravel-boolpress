@@ -1,66 +1,67 @@
 <template>
-<div class="container mt-5">
-    <div 
-    class="card"
-    >
+    <div class="container mt-5">
         <div 
-        class="card-img"
-        v-if="post.img_path"
+        class="card"
+        v-if="post"
         >
-            <img 
-            :src="post.img_path"
-            :alt="post.title"
+            <div 
+            class="card-img"
+            v-if="post.img_path"
             >
-        </div>
-        <div 
-        class="card-img fallback"
-        v-else
-        >
-            <img 
-            src="/fallback-images/posts-fallback.jpg"
-            alt="immagine segnaposto"
-            >
-        </div>
-
-        <div class="card-body">
-            <h4>
-                Titolo:
-                {{post.title}}
-            </h4>
-
-            <h5>
-                Slug:
-                {{post.slug}}
-            </h5>
-
-            <p v-if="post.category">
-                Categoria:
-                {{post.category.name}}
-            </p>
-            <p v-else>
-                Categoria: -
-            </p>
-            
-            <p v-if="post.tags.length > 0">
-                Tag:
-                <span
-                v-for="(tag, index) in post.tags"
-                :key="index"
+                <img 
+                :src="post.img_path"
+                :alt="post.title"
                 >
-                    {{tag.name}} |
-                </span>
-            </p>
-            <p v-else>
-                Tag: -
-            </p>
+            </div>
+            <div 
+            class="card-img fallback"
+            v-else
+            >
+                <img 
+                src="/fallback-images/posts-fallback.jpg"
+                alt="immagine segnaposto"
+                >
+            </div>
 
-            <p>
-                Contenuto:
-                {{post.description}}    
-            </p>
+            <div class="card-body">
+                <h4>
+                    Titolo:
+                    {{post.title}}
+                </h4>
+
+                <h5>
+                    Slug:
+                    {{post.slug}}
+                </h5>
+
+                <p v-if="post.category">
+                    Categoria:
+                    {{post.category.name}}
+                </p>
+                <p v-else>
+                    Categoria: -
+                </p>
+                
+                <p v-if="post.tags.length > 0">
+                    Tag:
+                    <span
+                    v-for="(tag, index) in post.tags"
+                    :key="index"
+                    >
+                        {{tag.name}} |
+                    </span>
+                </p>
+                <p v-else>
+                    Tag: -
+                </p>
+
+                <p>
+                    Contenuto:
+                    {{post.description}}    
+                </p>
+            </div>
         </div>
     </div>
-</div>
 </template>
 
 <script>
