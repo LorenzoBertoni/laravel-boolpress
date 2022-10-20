@@ -2,15 +2,28 @@
     <div class="container mt-5">
         <h1>Contattaci:</h1>
 
-        <form>
+        <form @submit.prevent="sendEmail">
             <label for="name">Nome</label>
-            <input type="text" id="name" name="name" v-model="name">
+            <input 
+            type="text"
+            id="name"
+            v-model="name"
+            >
             
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" v-model="email">
+            <input
+            type="email"
+            id="email"
+            v-model="email"
+            >
             
             <label for="message">Messaggio</label>
-            <input type="text" id="message" name="message" v-model="message">
+            <textarea
+            id="message"
+            v-model="message"
+            ></textarea>
+
+            <button type="submit">Invia</button>
         </form>
     </div>
 </template>
@@ -39,6 +52,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+    
 </style>

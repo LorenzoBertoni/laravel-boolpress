@@ -2,7 +2,7 @@
 <p>
     Hai ricevuto una nuova mail. <br>
     Dettagli: <br>
-    Nome: {{$lead->name}}
-    E-mail: {{$lead->email}}
-    Messaggio: {{$lead->message}}
+    Nome: {{$lead->name}} <br>
+    E-mail: {{$lead->email}} <br>
+    Messaggio: {{$lead->message}} <br>
 </p>
