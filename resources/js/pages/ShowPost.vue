@@ -59,6 +59,13 @@
                     Contenuto:
                     {{post.description}}    
                 </p>
+
+                <router-link 
+                :to="{name: 'posts'}"
+                class="btn btn-primary"
+                >
+                    Torna alla lista completa
+                </router-link>
             </div>
         </div>
     </div>

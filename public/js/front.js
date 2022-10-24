@@ -2234,6 +2234,7 @@ var render = function render() {
       key: index
     }, [_vm._v("\n                  " + _vm._s(tag.name) + " |\n              ")]);
   })], 2) : _c("p", [_vm._v("\n              Tag: -\n          ")]), _vm._v(" "), _c("p", [_vm._v("\n              " + _vm._s(_vm.truncateText(_vm.post.description, 30)) + "    \n          ")]), _vm._v(" "), _c("router-link", {
+    staticClass: "btn btn-primary",
     attrs: {
       to: {
         name: "post",
@@ -2546,7 +2547,14 @@ var render = function render() {
     return _c("span", {
       key: index
     }, [_vm._v("\n                    " + _vm._s(tag.name) + " |\n                ")]);
-  })], 2) : _c("p", [_vm._v("\n                Tag: -\n            ")]), _vm._v(" "), _c("p", [_vm._v("\n                Contenuto:\n                " + _vm._s(_vm.post.description) + "    \n            ")])])]) : _vm._e()]);
+  })], 2) : _c("p", [_vm._v("\n                Tag: -\n            ")]), _vm._v(" "), _c("p", [_vm._v("\n                Contenuto:\n                " + _vm._s(_vm.post.description) + "    \n            ")]), _vm._v(" "), _c("router-link", {
+    staticClass: "btn btn-primary",
+    attrs: {
+      to: {
+        name: "posts"
+      }
+    }
+  }, [_vm._v("\n                Torna alla lista completa\n            ")])], 1)]) : _vm._e()]);
 };
 
 var staticRenderFns = [];
@@ -2610,7 +2618,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card {\n  display: flex;\n  flex-direction: column;\n  flex-basis: calc(33.3333333333% - 1rem);\n  padding: 0.5rem 1rem;\n  border: 1px solid black;\n  border-radius: 0.5rem;\n}\n.card .card-img {\n  width: 100%;\n  height: 400px;\n}\n.card .card-img img {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n.card a {\n  text-decoration: none;\n}", ""]);
+exports.push([module.i, ".card {\n  display: flex;\n  flex-direction: column;\n  flex-basis: calc(33.3333333333% - 1rem);\n  padding: 0.5rem 1rem;\n  border: 1px solid black;\n  border-radius: 0.5rem;\n}\n.card .card-img {\n  width: 100%;\n  height: 400px;\n}\n.card .card-img img {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}", ""]);
 
 // exports
 

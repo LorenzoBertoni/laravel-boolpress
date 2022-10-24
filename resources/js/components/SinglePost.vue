@@ -54,6 +54,7 @@
 
             <router-link 
             :to="{name: 'post', params: {slug: post.slug}}"
+            class="btn btn-primary"
             >
                 Leggi di più
             </router-link>
@@ -96,9 +97,6 @@ export default {
                 object-fit: cover;
                 object-position: center;
             }
-        }
-        a {
-            text-decoration: none;
         }
     }
 </style>
